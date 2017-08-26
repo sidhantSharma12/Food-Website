@@ -35,6 +35,11 @@ input {
     margin-left: 17%;
     margin-top: 8%;
     font-size: 48px;
+    background-color: white;
+    background-image: url('../images/location.png');
+    background-position: 720px 36px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
 }
 
 input::placeholder {
@@ -44,14 +49,6 @@ input::placeholder {
     font-size: 48px;
     text-align: left;
     color: var(--black);
-}
-
-input[type=text] {
-    background-color: white;
-    background-image: url('../images/location.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding-left: 40px;
 }
 
 .find {
