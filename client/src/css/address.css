@@ -46,6 +46,14 @@ input::placeholder {
     color: var(--black);
 }
 
+input[type=text] {
+    background-color: white;
+    background-image: url('../images/location.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
 .find {
     width: 801px;
     height: 82px;
