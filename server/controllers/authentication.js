@@ -26,14 +26,13 @@ module.exports.register = function (req, res) {
 
 module.exports.authenticate = function (req, res) {
     User.findOne({'email' : req.body.email}, function (err, user) {
-        console.log(user);
         if (err) {
             res.status(400).json({'error' : err});
         }
-        if (!user){
+        else if (!user){
             res.status(404).json({'err' : "User doesn't exist"});
         }
-        if (req.body.password !== user.password) {
+        else if (req.body.password !== user.password) {
             res.status(401).json({'error' : 'Incorrect password'});
         }
         else {
