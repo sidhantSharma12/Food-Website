@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import Image from '../images/address.png'
 
 
-
-import '../css/address.css';
+import '../css/registration.css';
 
 class Address extends Component {
 
