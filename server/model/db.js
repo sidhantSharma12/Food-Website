@@ -24,3 +24,4 @@ process.on('SIGINT', function() {
     });
 });
 
+require('./user');
