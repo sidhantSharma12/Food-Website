@@ -1,21 +1,34 @@
 import React, { Component, Button } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import Image from '../images/address.png'
 
 import '../css/home.css';
-//import '../images/address.png'
-
-function dirButton(props) {
-    return (
-        <Button></Button>
-    )
-}
 
 class Home extends Component {
 
   render() {
     return (
-		    <div className="home">
+		    <div className="container">
+                <div>
+                    <ul className="login">
+                        <li>
+                            <Link to={`/`} activeClassName="active" className="in">Sign in</Link>
+                        </li>
+                        <li>
+                            <Link to={`/`} activeClassName="active" className="up">Sign up</Link>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h1>A quick and easy way to get delicious, homecooked food.</h1>
+                </div>
+                <div>
+                    <div>
+                        <Link to={`/`} activeClassName="active" className="want">I WANT FOOD</Link>
+                    </div>
+                    <div>
+                        <Link to={`/`} activeClassName="active" className="sell">I SELL FOOD</Link>
+                    </div>
+                </div>
             </div>
     );
   }
