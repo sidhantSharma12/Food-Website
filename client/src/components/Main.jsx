@@ -7,7 +7,6 @@ class Main extends Component {
 
   render() {
     return (
-    	
 		    <Switch>
 			    <Route exact path='/' component={Home}/>
 			    <Route path='/address' component={Address}/>

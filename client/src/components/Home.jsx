@@ -19,13 +19,13 @@ class Home extends Component {
                     </ul>
                 </div>
                 <div>
-                    <h1>A quick and easy way to get delicious, homecooked food.</h1>
+                    <h1 className="description">A quick and easy way to get delicious, homecooked food.</h1>
                 </div>
-                <div>
-                    <div>
+                <div className="buttons">
+                    <div className="want-button">
                         <Link to={`/`} activeClassName="active" className="want">I WANT FOOD</Link>
                     </div>
-                    <div>
+                    <div className="sell-button">
                         <Link to={`/`} activeClassName="active" className="sell">I SELL FOOD</Link>
                     </div>
                 </div>
