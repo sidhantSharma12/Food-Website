@@ -36,15 +36,16 @@ class RegNext extends Component {
         return (
             <div className="nextR">
                 <div className="heading">
-                    <h1>
+                    <h1 className="header">
                         Sign up in seconds
                     </h1>
+                    <hr className="line"/>
                 </div>
                 <div>
                     <h6 className="cooking">
                         What type of cuisine do you enjoy cooking?
                     </h6>
-                    <ul>
+                    <ul className="row">
                         {['British',
                             'American',
                         'Carribbean',
@@ -52,41 +53,41 @@ class RegNext extends Component {
                         'Chinese',
                         'French',
                         'Moroccan',
-                        'Spanish',
-                        'Greek',
-                        'Thai'].map(function(name, i) {
-                            return <li>
+                        'Spanish'].map(function(name, i) {
+                            return <li className="cuisine">
                                 <Food value={i}
                                       selected={this.state.selected[i]}
                                       onClick={() => this.handleClick(i)}
                                 />
-                                <p>{name}</p>
+                                <p className="cuisineName">{name}</p>
                             </li>;
-                        }, this)};
+                        }, this)}
                     </ul>
-                    <ul>
-                        {['Indian',
+                    <ul className="row">
+                        {['Greek',
+                            'Thai',
+                        'Indian',
                         'Turkish',
                         'Italian',
                         'Japanese',
                         'Vietnamese',
                         'Mediterranean'].map(function(name, i){
-                            return <li>
-                                <Food value={i}
-                                      selected={this.state.selected[i]}
-                                      onClick={() => this.handleClick(i)}
+                            return <li className="cuisine">
+                                <Food value={i + 8}
+                                      selected={this.state.selected[i+8]}
+                                      onClick={() => this.handleClick(i+8)}
                                 />
-                                <p>{name}</p>
+                                <p className="cuisineName">{name}</p>
                             </li>;
                         }, this)}
                     </ul>
-                    <p>
+                    <p className="note">
                         Click the images above to select cuisines you want to cook.
                     </p>
                 </div>
                 <div>
-                    <div className="sell-button">
-                        <Link to={`/`} activeClassName="active" className="sell">ALMOST THERE!</Link>
+                    <div className="almost-button">
+                        <Link to={`/`} activeClassName="active" className="almost">ALMOST THERE!</Link>
                     </div>
                 </div>
             </div>
