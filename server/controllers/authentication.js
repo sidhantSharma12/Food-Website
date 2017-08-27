@@ -9,6 +9,7 @@ module.exports.hello = function (req, res) {
 module.exports.register = function (req, res) {
     var newUser = new User();
 
+    newUser.name = req.body.name;
     newUser.email = req.body.email;
     newUser.password = req.body.password;
 
