@@ -30,6 +30,8 @@ class Address extends Component {
  
 	// Geocoding 
 	geocoder.geocode(this.state.value1, function ( err, data ) {
+		localStorage.setItem('lat', data.results[0].geometry.location.lat);
+		localStorage.setItem('lng',data.results[0].geometry.location.lng );
 	   fetch('/api/findClosest', {
 		  method: 'POST',
 		  headers: {
