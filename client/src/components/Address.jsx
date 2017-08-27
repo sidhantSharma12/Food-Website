@@ -52,12 +52,16 @@ class Address extends Component {
 		    <div className="address"> 
 		    	<div className="container">
 					<input className="input" placeholder="What's your address?" type="text" value={this.state.value1} onChange={this.handleChange}/>
-					<input className="input2" type="text" value={this.state.value2} onChange={this.handleChange2}/>
+					<div className="findChefInput">
+						<h1 className="findChef">Find chefs within</h1>
+						<input className="input2" type="text" value={this.state.value2} onChange={this.handleChange2}/>
+						<h1 className="findChef">KM of me!</h1>
+					</div>
 					<div>
 						<h1 className="find">This allows us to find people close to you who are cooking food for you to eat!</h1>
 					</div>
-					<div className="submit-button">
-						<button onClick={this.sendData.bind(this)} className="submit">SUBMIT</button>
+					<div>
+						<button onClick={this.sendData.bind(this)} className="submit-button1">SUBMIT</button>
 					</div>
 		    	</div>
 		     </div>
