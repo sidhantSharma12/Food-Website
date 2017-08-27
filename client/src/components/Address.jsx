@@ -29,20 +29,21 @@ class Address extends Component {
  
 	// Geocoding 
 	geocoder.geocode(this.state.value1, function ( err, data ) {
-	   console.log(data);
-	});
-  /*
-  	fetch('localhost:3000/api/location', {
-	  method: 'GET',
-	  headers: {
-	    'Accept': 'application/json',
-	    'Content-Type': 'application/json',
-	  },
-	  body: JSON.stringify({
-	    firstParam: 'yourValue',
-	    secondParam: 'yourOtherValue',
-	  })
-	});*/
+	   fetch('/api/location', {
+		  method: 'GET',
+		  headers: {
+		    'Accept': 'application/json',
+		    'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({
+		    distance: {
+			    lat:data.results[0].geometry.location.lat,
+			    lng:data.results[0].geometry.location.lng 	
+		    },
+		    radius: this.state.value2
+		  })
+		});
+  	});
   }
 
   render() {
