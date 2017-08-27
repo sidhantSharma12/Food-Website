@@ -11,7 +11,10 @@ var userSchema = new mongoose.Schema({
     	type: String
     },
     location: {
-    	type: String
+    	type: Object
+    },
+    cuisines: {
+        type: Array
     }
 });
 
