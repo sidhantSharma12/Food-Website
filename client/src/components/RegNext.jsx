@@ -6,12 +6,12 @@ import '../css/reg-next.css';
 function Food(props) {
     if (props.selected) {
         return (
-            <img src={require('../images/checkmark.png')} onClick={props.onClick}/>
+            <img className="check" src={require('../images/checkmark.png')} onClick={props.onClick}/>
         )
     } else {
         return (
             <div>
-                <img src={require('../images/cuisine' + props.value + '.png')} onClick={props.onClick}/>
+                <img className="foodPic" src={require('../images/cuisine' + props.value + '.png')} onClick={props.onClick}/>
             </div>
         )
     }
@@ -21,16 +21,41 @@ class RegNext extends Component {
     constructor() {
         super();
         this.state = {
-            selected: Array(16).fill(false)
+            selected: Array(16).fill(false),
+            cuisines: Array()
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleClick(index) {
+    handleClick(index, type) {
         var s = this.state.selected.slice();
         s[index] = !s[index];
-        console.log(s);
-        this.setState({selected: s});
+        var c = this.state.cuisines.slice();
+        if (s[index]){
+            c.push(type);
+        } else {
+            var index = c.indexOf(type);
+            if (index > -1) {
+                c.splice(index, 1);
+            }
+        }
+        this.setState({selected: s, cuisines: c});
     };
+
+    handleSubmit() {
+        var email = localStorage.getItem('email');
+        fetch('/api/cuisines', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email:email,
+                cuisines: this.state.cuisines
+            })
+        })
+    }
 
     render() {
         return (
@@ -57,7 +82,7 @@ class RegNext extends Component {
                             return <li className="cuisine">
                                 <Food value={i}
                                       selected={this.state.selected[i]}
-                                      onClick={() => this.handleClick(i)}
+                                      onClick={() => this.handleClick(i, name)}
                                 />
                                 <p className="cuisineName">{name}</p>
                             </li>;
@@ -75,7 +100,7 @@ class RegNext extends Component {
                             return <li className="cuisine">
                                 <Food value={i + 8}
                                       selected={this.state.selected[i+8]}
-                                      onClick={() => this.handleClick(i+8)}
+                                      onClick={() => this.handleClick(i+8, name)}
                                 />
                                 <p className="cuisineName">{name}</p>
                             </li>;
@@ -87,7 +112,7 @@ class RegNext extends Component {
                 </div>
                 <div>
                     <div className="almost-button">
-                        <Link to={`/`} activeClassName="active" className="almost">ALMOST THERE!</Link>
+                        <button className="almost" onClick={this.handleSubmit}>ALMOST THERE!</button>
                     </div>
                 </div>
             </div>

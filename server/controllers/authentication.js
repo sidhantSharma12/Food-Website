@@ -12,6 +12,7 @@ module.exports.register = function (req, res) {
     newUser.name = req.body.name;
     newUser.email = req.body.email;
     newUser.password = req.body.password;
+    newUser.cuisines = [];
 
     // save the user
     newUser.save(function(err) {

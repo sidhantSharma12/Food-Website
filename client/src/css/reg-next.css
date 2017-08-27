@@ -94,3 +94,8 @@ body::after {
     margin-left: 5%;
     margin-top: 5%;
 }
+
+.nextR .check{
+    width: 115px;
+    height: 115px;
+}
