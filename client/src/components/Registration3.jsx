@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 
-import '../css/registration.css';
+import '../css/registration3.css';
 
 class Registration3 extends Component {
 
