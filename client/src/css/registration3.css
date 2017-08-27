@@ -97,3 +97,18 @@ body::after {
     margin-left: 92px;
     display: inline-block;
 }
+
+.next-button1 {
+    width: 130px;
+    height: 49px;
+    font-family: 'Lato', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0ab72c;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 15%;
+    margin-top: 2%;
+    border-radius: 12px;
+}
