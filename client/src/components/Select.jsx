@@ -63,7 +63,12 @@ class Select extends Component {
                 </div>
                 <div>
                     <Map google={this.props.google}
-                         onClick={this.onMapClicked}>
+                         onClick={this.onMapClicked}
+                         initialCenter={{
+                            lat: 43.6632012,
+                            lng: -79.41060929999999
+                        }}
+                    >
                         <Marker onClick={this.onMarkerClick}
                                 name={'Current location'} />
 
