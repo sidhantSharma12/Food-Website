@@ -3,7 +3,7 @@ import Home from './Home.jsx';
 import Address from './Address.jsx';
 import Registration from './Registration.jsx'
 import Registration3 from './Registration3.jsx'
-import Signin from './Signin.jsx'
+import Signin from './SignIn.jsx'
 import { Switch, Route, Link } from 'react-router-dom';
 
 class Main extends Component {
