@@ -31,7 +31,7 @@ module.exports.findClosest = function (req, res) {//assuming req.body.address in
     		});
             setTimeout(function () {
                 res.status(200).json({arr : acceptedChefs});
-            }, 1000)
+            }, 10000)
 
         }
     });	
