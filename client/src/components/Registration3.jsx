@@ -31,7 +31,8 @@ class Registration3 extends Component {
 				},
 				body: JSON.stringify({
 					lat: data.results[0].geometry.location.lat,
-					lng: data.results[0].geometry.location.lng 
+					lng: data.results[0].geometry.location.lng,
+					email: localStorage.getItem("email");
 				})
 			})
 		});
