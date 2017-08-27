@@ -15,7 +15,6 @@ class Select extends Component {
                     />
                 </form>
             </div>
-            <div>
         );
     }
 }
