@@ -42,6 +42,7 @@ module.exports.storeAddress= function(req, res){
         } else if (!user){
             res.status(404).json({'err' : "User doesn't exist"});
         } else {
+            console.log(user);
         	user.location.lat = req.body.lat;
             user.location.lng = req.body.lng;
             user.save(function (err) {
