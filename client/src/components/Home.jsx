@@ -7,14 +7,16 @@ class Home extends Component {
 
   render() {
     return (
-		    <div className="container">
+		    <div>
                 <div>
                     <ul className="login">
                         <li>
                             <Link to={`/`} activeClassName="active" className="in">Sign in</Link>
                         </li>
                         <li>
-                            <Link to={`/`} activeClassName="active" className="up">Sign up</Link>
+                            <div className="verticalLine">
+                                <Link to={`/`} activeClassName="active" className="up">Sign up</Link>
+                            </div>
                         </li>
                     </ul>
                 </div>
