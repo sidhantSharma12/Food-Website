@@ -5,6 +5,22 @@ import '../css/registration3.css';
 
 class Registration3 extends Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {address: ''};
+
+		this.handleChange = this.handleChange.bind(this);
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	handleChange(event) {
+		this.setState({address: event.target.value});
+	}
+
+	handleClick(){
+		console.log(this.state.address);
+	}
+
   render() {
     return (
     	
@@ -12,7 +28,7 @@ class Registration3 extends Component {
 		    	<div className="header"> Sign up in seconds</div>
 				<hr className="line"/>
 		    	<div className="inputName">Home Address</div>
-		    	<input className="inputBox"/>
+		    	<input className="inputBox" value={this.state.address} onChange={this.handleChange}/>
 		    	<div className="note">ie. where will you be cooking?</div>
 
 				<div className="inputName">Enter Availability in Calendar</div>
@@ -26,7 +42,7 @@ class Registration3 extends Component {
 				<div className="note">Yes, you can do this part later if you are in a rush.</div>
 
 				<div className="next-button">
-					<Link to={`/`} activeClassName="active" className="next">NEXT</Link>
+					<button onClick={this.handleClick} className="next">NEXT</button>
 				</div>
 		     </div>
       
