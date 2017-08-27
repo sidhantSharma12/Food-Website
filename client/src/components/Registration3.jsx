@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-
+import Image from '../images/calendar.png'
 import '../css/registration3.css';
 
 class Registration3 extends Component {
@@ -18,7 +18,7 @@ class Registration3 extends Component {
 				<div className="inputName">Enter Availability in Calendar</div>
 		    	<div className="note">ie. when will you be cooking?</div>
 				<div className="input-data">
-					
+					<img className="calendarIcon" src={Image} height={32} width={32}/>
 					<div className="input-button">
 						<Link to={`/`} activeClassName="active" className="input-text">Input Data</Link>
 					</div>

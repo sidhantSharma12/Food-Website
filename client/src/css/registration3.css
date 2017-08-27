@@ -78,7 +78,8 @@ body::after {
     border-radius: 4px;
     background-color: #5bc9ed;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    margin-left: 5%;
+    margin-left: 1%;
+    display: inline-block;
 }
 
 .input-text {
@@ -90,4 +91,9 @@ body::after {
     margin-left: 11%;
     color: var(--black);
     text-decoration: none;
+}
+
+.calendarIcon {
+    margin-left: 92px;
+    display: inline-block;
 }
