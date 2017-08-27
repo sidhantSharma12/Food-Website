@@ -21,12 +21,15 @@ body::after {
     font-size: 48px;
     font-weight: 900;
     text-align: left;
-    margin: 39px 92px;
+    margin-top: 39px;
+    margin-left: 92px;
+    margin-bottom: 8px;
     color: #ffffff;
     text-shadow: 1px 1px 1px black;
 }
 
 .line {
+    margin-top: 0;
     width: 90%;
     border: solid 2px #ffffff;
 }
@@ -44,15 +47,14 @@ body::after {
 }
 
 .row {
-    list-style-type:none;
-    display: inline-block;
+    list-style-type: none;
     text-align: center;
     margin-top: 0;
 }
 
 .cuisine {
     display: inline-block;
-    margin-right: 60px;
+    margin: 1%;
 }
 
 .cuisineName {
@@ -72,6 +74,7 @@ body::after {
     font-weight: 400;
     text-align: left;
     margin-left: 92px;
+    margin-top: 0;
     color: #ffffff;
     text-shadow: 1px 1px 1px black;
 }
