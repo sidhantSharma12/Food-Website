@@ -14,7 +14,7 @@ class SignIn extends Component {
 		    	<div className="inputName">Username (Email)</div>
 		    	<input className="inputBox"/>
 		    	<div className="inputName">Password</div>
-				<input className="inputBox"/>
+				<input className="inputBox" type="password"/>
 				<div className="forgot">
 					<img className="forgotIcon" src={Image} height={32} width={32}/>
 		    		<div className="forgotPass">Forgot Password</div>
