@@ -55,28 +55,19 @@ body::after {
     padding: 5px;
 }
 
-.next-button {
-    width: 204px;
-    height: 82px;
-    border-radius: 15px;
-    background-color: #0ab72c;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    border: solid 1px #979797;
-    margin-left: 12%;
-    margin-top: 5%;
-}
-
-.next {
+.next-button1 {
     width: 130px;
     height: 49px;
     font-family: 'Lato', sans-serif;
     font-size: 36px;
     text-align: center;
     color: #ffffff;
+    background-color: #0ab72c;
     display: inline-block;
     text-decoration: none;
-    margin-left: 17%;
-    margin-top: 9%;
+    margin-left: 15%;
+    margin-top: 2%;
+    border-radius: 12px;
 }
 
 .line {

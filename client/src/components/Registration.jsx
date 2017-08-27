@@ -56,8 +56,8 @@ class Registration extends Component {
 		    	<div className="inputName">Password</div>
 		    	<input className="inputBox" type='password' value={this.state.password} onChange={this.handleChangeP}/>
 
-				<div className="next-button">
-					<button onClick={() => this.handleClick()}>NEXT</button>
+				<div>
+					<button className="next-button1" onClick={() => this.handleClick()}>NEXT</button>
 				</div>
 		     </div>
 
