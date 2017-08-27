@@ -11,11 +11,11 @@ class Home extends Component {
                 <div>
                     <ul className="login">
                         <li>
-                            <Link to={`/`} activeClassName="active" className="in">Sign in</Link>
+                            <Link to={'/signin'} activeClassName="active" className="in">Sign in</Link>
                         </li>
                         <li>
                             <div className="verticalLine">
-                                <Link to={`/`} activeClassName="active" className="up">Sign up</Link>
+                                <Link to={'/'} activeClassName="active" className="up">Sign up</Link>
                             </div>
                         </li>
                     </ul>
@@ -25,10 +25,10 @@ class Home extends Component {
                 </div>
                 <div className="buttons">
                     <div className="want-button">
-                        <Link to={`/`} activeClassName="active" className="want">I WANT FOOD</Link>
+                        <Link to={'/address'} activeClassName="active" className="want">I WANT FOOD</Link>
                     </div>
                     <div className="sell-button">
-                        <Link to={`/`} activeClassName="active" className="sell">I SELL FOOD</Link>
+                        <Link to={'/registration'} activeClassName="active" className="sell">I SELL FOOD</Link>
                     </div>
                 </div>
             </div>

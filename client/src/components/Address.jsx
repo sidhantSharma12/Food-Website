@@ -5,6 +5,10 @@ import '../css/address.css';
 
 class Address extends Component {
 
+  sendData(){
+  	
+  }
+
   render() {
     return (
     	
@@ -15,7 +19,7 @@ class Address extends Component {
 						<h1 className="find">This allows us to find people close to you who are cooking food for you to eat!</h1>
 					</div>
 					<div className="submit-button">
-						<Link to={`/`} activeClassName="active" className="submit">SUBMIT</Link>
+						<button onClick={sendData} className="submit">SUBMIT</button>
 					</div>
 		    	</div>
 		     </div>
