@@ -23,6 +23,7 @@ body::after {
     text-align: left;
     margin: 39px 92px;
     color: #ffffff;
+    text-shadow: 1px 1px 1px black;
 }
 
 .line {
@@ -39,6 +40,7 @@ body::after {
     margin: 30px 92px;
     text-align: left;
     color: #ffffff;
+    text-shadow: 1px 1px 1px black;
 }
 
 .row {
@@ -59,6 +61,7 @@ body::after {
     font-size: 24px;
     color: #ffffff;
     margin: 0;
+    text-shadow: 1px 1px 1px black;
 }
 
 .note {
@@ -70,29 +73,21 @@ body::after {
     text-align: left;
     margin-left: 92px;
     color: #ffffff;
-}
-
-.almost-button {
-    width: 352px;
-    height: 82px;
-    border-radius: 15px;
-    background-color: #0ab72c;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    border: solid 1px #979797;
-    margin-left: 20%;
-    margin-top: 0;
+    text-shadow: 1px 1px 1px black;
 }
 
 .almost {
-    width: 312px;
+    width: 500px;
     height: 66px;
     font-family: 'Lato', sans-serif;
     font-size: 40px;
     color: #ffffff;
+    background-color: #0ab72c;
     text-decoration: none;
     display: inline-block;
-    margin-left: 5%;
-    margin-top: 5%;
+    margin-left: 15%;
+    margin-top: 0;
+    border-radius: 10px;
 }
 
 .nextR .check{
