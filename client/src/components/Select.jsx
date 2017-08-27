@@ -13,7 +13,25 @@ class Select extends Component {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
-        }
+            spots: Array(1).fill(null)
+        };
+        fetch('/api/findClosest', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                distance: {
+                    lat: localStorage.getItem("lat"),
+                    lng: localStorage.getItem("lng")
+                },
+                radius: 5
+            })
+        }).then(res => res.json())
+            //.then(arr => this.setState(console.log(arr)));
+            .then(arr => this.setState({ spots: arr.arr }));
+
         // binding this to event-handler functions
         this.onMarkerClick = this.onMarkerClick.bind(this);
         this.onMapClicked = this.onMapClicked.bind(this);
@@ -37,30 +55,9 @@ class Select extends Component {
     }
 
     render() {
+        //var marks = this.state.spots.map(function(e){
         return (
             <div>
-                <div>
-                    <form>
-                        <input
-                            type="text"
-                            placeholder="Search..."
-                        />
-                        <select>
-                            <option value="Cuisine">Cuisine</option>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
-                        </select>
-                        <li>RADIUS within <input type="text"/> KM</li>
-                        <li>PRICE <input type="text"/> to <input type="text"/></li>
-                    </form>
-                </div>
-                <div>
-                    <h1>
-                        Order delicious home cooked food from your neighbours.
-                    </h1>
-                </div>
                 <div>
                     <Map google={this.props.google}
                          onClick={this.onMapClicked}
@@ -69,8 +66,24 @@ class Select extends Component {
                             lng: -79.41060929999999
                         }}
                     >
-                        <Marker onClick={this.onMarkerClick}
-                                name={'Current location'} />
+
+                        <Marker name={'Current location'}
+                                position={{
+                            lat: 43.6500015,
+                            lng: -79.41060929999999
+                        }}/>
+
+                        <Marker name={'Current location'}
+                                position={{
+                            lat: 43.6632012,
+                            lng: -79.40060929999999
+                        }}/>
+
+                        <Marker name={'Current location'}
+                                position={{
+                            lat: 43.67,
+                            lng: -79.41060929999999
+                        }}/>
 
                         <InfoWindow
                             marker={this.state.activeMarker}

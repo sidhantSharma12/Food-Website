@@ -17,20 +17,22 @@ module.exports.findClosest = function (req, res) {//assuming req.body.address in
         	cooks.map((item) => {
         		var httpString= 'https://maps.googleapis.com//maps/api/distancematrix/json?units=imperial&origins=' + req.body.distance.lat + ',' + req.body.distance.lng + '&destinations=' + item.location.lat + '%2C' + item.location.lng + '&key=AIzaSyDxL4NAv1bO7f9ofa_nl_zt2sEzG67I5Pk';
         		http.get(httpString, function(resp){
-        			resp.on('data', function(chunk){
-                        console.log(JSON.parse(chunk).rows[0].elements[0].distance);
-                        console.log(JSON.parse(chunk));
-                        console.log(req.body.radius);
-                        console.log((parseInt(JSON.parse(chunk).rows[0].elements[0].distance.text.split(' ')[0]) * 1.6));
-        				if((parseInt(JSON.parse(chunk).rows[0].elements[0].distance.text.split(' ')[0]) * 1.6) <= req.body.radius){
-                            console.log(item);
-	     				 	acceptedChefs.push(item);
-        				}
+        			resp.on('data', function(chunk) {
+                        if (JSON.parse(chunk).rows[0].elements[0].distance) {
+                            if ((parseInt(JSON.parse(chunk).rows[0].elements[0].distance.text.split(' ')[0]) * 1.6) <= req.body.radius) {
+                                console.log(item);
+                                acceptedChefs.push(item);
+                            }
+                        }
         			});
         		});
     		});
             setTimeout(function () {
-                res.status(200).json({arr : acceptedChefs});
+                if (!acceptedChefs){
+                    res.status(200).json({arr : []});
+                } else {
+                    res.status(200).json({arr: acceptedChefs});
+                }
             }, 10000)
 
         }
