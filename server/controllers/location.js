@@ -13,15 +13,19 @@ module.exports.findClosest = function (req, res) {//assuming req.body.address in
             res.status(404).json({'err' : "No cooks doesn't exist"});
         }
         else {
-        	res.status(200).json({'message': 'Validated User'});
+        	
         	cooks.map((item) => {
         		var httpString= 'https://maps.googleapis.com//maps/api/distancematrix/json?units=imperial&origins=' + req.body.lat + ',' + req.body.lng + '&destinations=' + item.location.lat + '%2C' + item.location.lng + '&key=AIzaSyDxL4NAv1bO7f9ofa_nl_zt2sEzG67I5Pk';
         		http.get(httpString, function(resp){
         			resp.on('data', function(chunk){
-	     				console.log(chunk);
+        				if((parseInt(JSON.parse(chunk).rows[0].elements[0].distance.text.split(' ')[0]) * 1.6) <= req.body.radius){
+	     				 	acceptedChefs.push(item);
+        				}
         			});
+        			
         		});           
     		});
+    		res.status(200).json({arr : acceptedChefs});
         }
     });	
 /*		
