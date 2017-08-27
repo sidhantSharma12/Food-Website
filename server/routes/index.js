@@ -11,5 +11,6 @@ router.post('/register', ctrlAuth.register);
 router.post('/auth', ctrlAuth.authenticate);
 router.post('/cuisines', ctrlFood.updateCuisine);
 router.get('/location', location.findClosest);
+router.post('/location', location.storeAddress);
 
 module.exports = router;
