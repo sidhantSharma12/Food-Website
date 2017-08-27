@@ -29,7 +29,7 @@ body::after {
     background: url(../images/red.png);
 }
 
-input {
+.input {
     width: 60%;
     padding: 30px;
     margin-left: 17%;
@@ -42,7 +42,7 @@ input {
     padding-left: 40px;
 }
 
-input::placeholder {
+.input::placeholder {
     width: 451px;
     height: 66px;
     font-family: 'Lato', sans-serif;
