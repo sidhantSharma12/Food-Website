@@ -58,8 +58,8 @@ class Registration3 extends Component {
 				</div>
 				<div className="note">Yes, you can do this part later if you are in a rush.</div>
 
-				<div className="next-button">
-					<button onClick={this.handleClick} className="next">NEXT</button>
+				<div>
+					<button onClick={this.handleClick} className="next-button1">NEXT</button>
 				</div>
 		     </div>
       
