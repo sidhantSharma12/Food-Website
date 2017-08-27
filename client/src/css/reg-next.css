@@ -1,0 +1,33 @@
+body::after {
+    content: "";
+    background: url(../images/cuisines.png);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.nextR .heading {
+    width: 100%;
+    margin-top:25px;
+}
+
+.nextR h1 {
+    width: 80%;
+    height: 66px;
+    font-family: Avenir;
+    font-size: 48px;
+    font-weight: 900;
+    text-align: left;
+    color: #ffffff;
+    border-color: transparent;
+    border-style: solid;
+    border-bottom-color: white;
+    margin:auto;
+    vertical-align:middle;
+}
