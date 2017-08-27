@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Image from '../images/calendar.png'
+import { Redirect } from 'react-router';
+
 import '../css/registration3.css';
 
 class Registration3 extends Component {
@@ -14,12 +16,13 @@ class Registration3 extends Component {
 	}
 
 	handleChange(event) {
-		this.setState({address: event.target.value});
+		this.setState({address: event.target.value, redirect:false});
 	}
 
 	handleClick(){
 
 		var geocoder = require('geocoder');
+		var that=this;
 
 		geocoder.geocode(this.state.address, function ( err, data ) {
 
@@ -34,11 +37,17 @@ class Registration3 extends Component {
 					lng: data.results[0].geometry.location.lng,
 					email: localStorage.getItem("email")
 				})
+			}).then(function(){
+				that.setState({redirect: true});
 			})
 		});
+		
 	}
 
   render() {
+  	if (this.state.redirect) {
+    return <Redirect push to="/" />;
+    }
     return (
     	
 		    <div className="registration3"> 
@@ -59,7 +68,7 @@ class Registration3 extends Component {
 				<div className="note">Yes, you can do this part later if you are in a rush.</div>
 
 				<div className="next-button">
-					<button onClick={this.handleClick} className="next">NEXT</button>
+					<button onClick={this.handleClick} className="next">DONE</button>
 				</div>
 		     </div>
       
