@@ -1,5 +1,6 @@
 import React, { Component, Text } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 import '../css/reg-next.css';
 
@@ -22,7 +23,8 @@ class RegNext extends Component {
         super();
         this.state = {
             selected: Array(16).fill(false),
-            cuisines: Array()
+            cuisines: Array(),
+             redirect:false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -55,9 +57,13 @@ class RegNext extends Component {
                 cuisines: this.state.cuisines
             })
         })
+        this.setState({redirect: true});
     }
 
     render() {
+        if (this.state.redirect) {
+    return <Redirect push to="/registration3" />;
+    }
         return (
             <div className="nextR">
                 <div className="heading">
