@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+
+body::after {
+    content: "";
+    background: url(../images/registration3.png);
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.header {
+    width: 435px;
+    height: 66px;
+    font-family: 'Lato', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    text-align: left;
+    margin: 39px 92px;
+    color: #ffffff;
+}
+
+.note {
+    width: 500px;
+    height: 50px;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 92px;
+    color: #ffffff;
+}
+
+.inputBox {
+    width: 25%;
+    margin-left: 92px;
+    font-size: 24px;
+    padding: 5px;
+}
+
+.next-button {
+    width: 204px;
+    height: 82px;
+    border-radius: 15px;
+    background-color: #0ab72c;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border: solid 1px #979797;
+    margin-left: 12%;
+    margin-top: 5%;
+}
+
+.next {
+    width: 130px;
+    height: 49px;
+    font-family: 'Lato', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 17%;
+    margin-top: 9%;
+}
+
+.line {
+    width: 90%;
+    border: solid 2px #ffffff;
+}
+
+.input-button {
+    width: 147px;
+    height: 37px;
+    border-radius: 4px;
+    background-color: #5bc9ed;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    margin-left: 1%;
+    display: inline-block;
+}
+
+.input-text {
+    width: 116px;
+    height: 33px;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-left: 11%;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.calendarIcon {
+    margin-left: 92px;
+    display: inline-block;
+}
