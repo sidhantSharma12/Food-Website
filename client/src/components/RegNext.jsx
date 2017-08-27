@@ -41,7 +41,7 @@ class RegNext extends Component {
                     </h1>
                 </div>
                 <div>
-                    <h6>
+                    <h6 className="cooking">
                         What type of cuisine do you enjoy cooking?
                     </h6>
                     <ul>
