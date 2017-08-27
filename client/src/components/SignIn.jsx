@@ -11,13 +11,13 @@ class SignIn extends Component {
 		    <div className="signin"> 
 		    	<div className="header"> Welcome Back!</div>
 				<hr className="line"/>
-		    	<div className="username">Username (Email)</div>
-		    	<input className="usernameInput"/>
-		    	<div className="password">Password</div>
-				<input className="password"/>
-		    	<div className="underAvailability">Forgot Password</div>
+		    	<div className="inputName">Username (Email)</div>
+		    	<input className="inputBox"/>
+		    	<div className="inputName">Password</div>
+				<input className="inputBox"/>
+		    	<div className="inputName">Forgot Password</div>
 				<div className="next-button">
-					<Link to={'/'} activeClassName="active" className="next">NEXT</Link>
+					<Link to={'/'} activeClassName="active" className="next">SIGN IN</Link>
 				</div>
 		     </div>
       
