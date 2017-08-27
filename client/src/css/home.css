@@ -9,7 +9,7 @@
 body::after {
 	content: "";
 	background: url(../images/address.png);
-	opacity: 0.5;
+	opacity: 0.8;
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -23,6 +23,7 @@ body::after {
 .login {
     text-align: right;
     list-style-type: none;
+    margin-right: 50px;
 }
 
 .login li {
@@ -46,6 +47,7 @@ body::after {
     font-size: 24px;
     color: var(--black);
     text-decoration: none;
+    margin-left: 15px;
 }
 
 .description {
@@ -54,7 +56,9 @@ body::after {
     font-weight: 300;
     font-size: 96px;
     text-align: center;
+    margin-left: 20%;
     color: #ffffff;
+    text-shadow: 1px 1px 1px black;
 }
 
 .want-button {
@@ -64,7 +68,7 @@ body::after {
     border-radius: 15px;
     background-color: var(--pale-red);
     border: solid 1px #979797;
-    margin-right: 140px;
+    margin-left: 22%;
 }
 
 .sell-button {
@@ -74,6 +78,7 @@ body::after {
     border-radius: 15px;
     background-color: var(--pumpkin-orange);
     border: solid 1px #979797;
+    margin-left: 5%;
 }
 
 .want {
@@ -96,6 +101,13 @@ body::after {
     color: #ffffff;
     text-decoration: none;
     display: inline-block;
-    margin-left: 16%;
+    margin-left: 17%;
     margin-top: 8%;
+}
+
+.verticalLine {
+    display: inline-block;
+    padding: 0 25px;
+    margin: 10px 0;
+    border-left: solid #111111;
 }
