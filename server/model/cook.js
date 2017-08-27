@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var userSchema = new mongoose.Schema({
+var cookSchema = new mongoose.Schema({
     email: {
         type: String
     },
@@ -15,4 +15,4 @@ var userSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Cook', cookSchema);
