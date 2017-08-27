@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 import '../css/registration.css';
 
@@ -7,7 +8,7 @@ class Registration extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {name: '', email: '', password: ''};
+		this.state = {name: '', email: '', password: '', redirect:false};
 
 		this.handleChangeN = this.handleChangeN.bind(this);
 		this.handleChangeE = this.handleChangeE.bind(this);
@@ -43,10 +44,15 @@ class Registration extends Component {
 				email: this.state.email,
 				password: this.state.password
 			})
-		})
+		});
+		this.setState({redirect: true});
 	}
 
   render() {
+  	
+  	if (this.state.redirect) {
+    return <Redirect push to="/registration2" />;
+    }
     return (
     	
 		    <div className="registration"> 

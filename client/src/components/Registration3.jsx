@@ -18,7 +18,23 @@ class Registration3 extends Component {
 	}
 
 	handleClick(){
-		console.log(this.state.address);
+
+		var geocoder = require('geocoder');
+
+		geocoder.geocode(this.state.address, function ( err, data ) {
+
+			fetch('/api/location', {
+				method: 'POST',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					lat: data.results[0].geometry.location.lat,
+					lng: data.results[0].geometry.location.lng 
+				})
+			})
+		});
 	}
 
   render() {

@@ -17,7 +17,7 @@ class Main extends Component {
 			    <Route path='/registration' component={Registration}/>
                 <Route path='/registration3' component={Registration3}/>
                 <Route path='/signin' component={Signin}/>
-                <Route path="/registration-next" component={RegNext}/>
+                <Route path="/registration2" component={RegNext}/>
 		    </Switch>
       
     );
