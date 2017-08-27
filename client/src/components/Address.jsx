@@ -24,7 +24,14 @@ class Address extends Component {
   }
 
   sendData(){
-  
+
+  	var geocoder = require('geocoder');
+ 
+	// Geocoding 
+	geocoder.geocode(this.state.value1, function ( err, data ) {
+	   console.log(data);
+	});
+  /*
   	fetch('localhost:3000/api/location', {
 	  method: 'GET',
 	  headers: {
@@ -35,7 +42,7 @@ class Address extends Component {
 	    firstParam: 'yourValue',
 	    secondParam: 'yourOtherValue',
 	  })
-	});
+	});*/
   }
 
   render() {
