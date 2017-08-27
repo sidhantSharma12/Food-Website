@@ -28,6 +28,10 @@ class Registration extends Component {
 	}
 
 	handleClick(){
+		localStorage.setItem('name', this.state.name);
+		localStorage.setItem('email', this.state.email);
+		localStorage.setItem('password', this.state.password);
+
 		fetch('/api/register', {
 			method: 'POST',
 			headers: {
