@@ -13,6 +13,7 @@ class Address extends Component {
 					};
 	this.handleChange = this.handleChange.bind(this);
 	 this.handleChange2 = this.handleChange2.bind(this);
+	 this.sendData = this.sendData.bind(this);
   }
 
    handleChange(event) {
@@ -24,13 +25,13 @@ class Address extends Component {
   }
 
   sendData(){
-
+  	var value3= this.state.value2;
   	var geocoder = require('geocoder');
  
 	// Geocoding 
 	geocoder.geocode(this.state.value1, function ( err, data ) {
-	   fetch('/api/location', {
-		  method: 'GET',
+	   fetch('/api/findClosest', {
+		  method: 'POST',
 		  headers: {
 		    'Accept': 'application/json',
 		    'Content-Type': 'application/json',
@@ -40,10 +41,10 @@ class Address extends Component {
 			    lat:data.results[0].geometry.location.lat,
 			    lng:data.results[0].geometry.location.lng 	
 		    },
-		    radius: this.state.value2
+		    radius: value3
 		  })
 		});
-  	});
+  	}.bind(this));
   }
 
   render() {
@@ -61,7 +62,7 @@ class Address extends Component {
 						<h1 className="find">This allows us to find people close to you who are cooking food for you to eat!</h1>
 					</div>
 					<div>
-						<button onClick={this.sendData.bind(this)} className="submit-button1">SUBMIT</button>
+						<button onClick={this.sendData} className="submit-button1">SUBMIT</button>
 					</div>
 		    	</div>
 		     </div>

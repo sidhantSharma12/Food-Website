@@ -1,5 +1,5 @@
 import React, { Component, Text } from 'react';
-import GoogleMapReact from "google-map-react";
+//import GoogleMapReact from "google-map-react";
 import { Switch, Route, Link } from 'react-router-dom';
 
 import '../css/select.css';
